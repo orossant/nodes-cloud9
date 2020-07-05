@@ -1,0 +1,614 @@
+/* colors:
+ *  * #ABB2BF default syntax (foreground)
+ *   * #828997 medium syntax
+ *    * #5C6370 darkest syntax
+ *     * #56B6C2 cyan
+ *      * #61AFEF blue
+ *       * #C678DD purple
+ *        * #98C379 green
+ *         * #E06C75 light red
+ *          * #BE5046 red
+ *           * #E5C07B light orange
+ *            * #D19A66 orange
+ *             * #282C34 background
+ *              * #528BFF accent
+ *               * @syntax-gutter: darken(@syntax-fg, 26%);
+ *                * @syntax-guide:  fade(@syntax-fg, 15%);
+ *                 */
+
+ /* Animations */
+@keyframes loading {
+    from {transform: rotate(0);}
+    to {transform: rotate(-90deg);}
+}
+
+@keyframes folder-loading {
+    from {transform: translateX(0);}
+    to {transform: translateX(10px);}
+}
+
+@keyframes saving {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes saved {
+    from {transform: scale(1);}
+    to {transform: scale(0);}
+}
+
+ /* Ace */
+.ace-cloud9-night,
+.ace-cloud9-night .ace_gutter {
+  background: #282C34 !important;
+  color: #ABB2BF !important;
+}
+
+.ace-cloud9-night .ace_print-margin {
+  width: 1px;
+  background: #555651;
+}
+
+.ace-cloud9-night {
+  background-color: #282C34;
+  color: #ABB2BF;
+}
+
+.ace-cloud9-night .ace_cursor {
+  color: #528BFF;
+}
+
+.ace-cloud9-night .ace_marker-layer .ace_selection {
+  background: #3D4350;
+}
+
+.ace-cloud9-night .ace_multiselect .ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px #282C34;
+}
+
+.ace-cloud9-night .ace_marker-layer .ace_step {
+  background: rgb(102, 82, 0);
+}
+
+.ace-cloud9-night .ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #ABB2BF;
+}
+
+.ace-cloud9-night .ace_marker-layer .ace_active-line {
+  background: #202020;
+}
+
+.ace-cloud9-night .ace_gutter-active-line {
+  background-color: #272727 !important;
+}
+
+.ace-cloud9-night .ace_marker-layer .ace_selected-word {
+  border: 1px solid #49483E;
+}
+
+.ace-cloud9-night .ace_invisible {
+  color: #3B4048;
+}
+
+.ace-cloud9-night .ace_entity.ace_name.ace_tag,
+.ace-cloud9-night .ace_meta.ace_tag,
+.ace-cloud9-night .ace_constant,
+.ace-cloud9-night .ace_storage {
+  color: #E06C75;
+}
+
+.ace-cloud9-night .ace_keyword{
+  color: #61AFEF;
+}
+
+.ace-cloud9-night .ace_punctuation,
+.ace-cloud9-night .ace_punctuation.ace_tag {
+  color: #ABB2BF;
+}
+
+.ace-cloud9-night .ace_constant.ace_support.ace_fonts,
+.ace-cloud9-night .ace_constant.ace_character,
+.ace-cloud9-night .ace_constant.ace_support,
+.ace-cloud9-night .ace_constant.ace_language,
+.ace-cloud9-night .ace_constant.ace_numeric,
+.ace-cloud9-night .ace_constant.ace_other {
+  color: #D19A66;
+}
+
+.ace-cloud9-night .ace_invalid {
+  color: #F8F8F0;
+  background-color: #F92672;
+}
+
+.ace-cloud9-night .ace_invalid.ace_deprecated {
+  color: #F8F8F0;
+  background-color: #AE81FF;
+}
+
+.ace-cloud9-night .ace_support.ace_type {
+    color: #ABB2BF;
+}
+
+.ace-cloud9-night .ace_constant.ace_language.ace_escape,
+.ace-cloud9-night .ace_keyword.ace_operator,
+.ace-cloud9-night .ace_support.ace_function {
+  color: #56B6C2;
+}
+
+.ace-cloud9-night .ace_fold {
+  background-color: #A6E22E;
+  border-color: #ABB2BF;
+}
+
+.ace-cloud9-night .ace_storage.ace_type {
+    color: #C678DD;
+}
+
+.ace-cloud9-night .ace_support.ace_class {
+  font-style: italic;
+  color: #66D9EF;
+}
+
+.ace-cloud9-night .ace_entity.ace_other,
+.ace-cloud9-night .ace_entity.ace_other.ace_attribute-name,
+.ace-cloud9-night .ace_variable {
+  color: #D19A66;
+}
+
+.ace-cloud9-night .ace_string,
+.ace-cloud9-night .ace_list.ace_markup,
+.ace-cloud9-night .ace_constant.ace_language.ace_escape .ace_string,
+.ace-cloud9-night .ace_string.ace_attribute-value {
+    color: #98C379;
+}
+
+.ace-cloud9-night .ace_entity.ace_name.ace_function {
+  color: #61AFEF;
+}
+
+.ace-cloud9-night .ace_operator {
+    color: #ABB2BF;
+}
+
+/* .ace-cloud9-night .ace_string, */
+.ace-cloud9-night .ace_identifier,
+.ace-cloud9-night .ace_variable.ace_parameter{
+  color: #ABB2BF;
+}
+
+.ace-cloud9-night .ace_comment {
+  color: #5C6370;
+  font-style: italic;
+}
+
+/* VIM mode cursor */
+.normal-mode .ace_cursor {
+  border: 1px solid #528BFF;
+  background-color: #528BFF;
+}
+
+/* Toolbar */
+.runbtn.stopped .c9-icon {
+  background-image: none !important;
+  background-color: #ABB2BF;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  /*position: relative;*/
+}
+
+.runbtn.stopped .c9-icon:after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 0px;
+  height: 0px;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 8px solid #222222;
+}
+
+.stats-btn .progress {
+  background-color: #828997;
+}
+
+.stats-btn:hover .progress {
+  background-color: #61AFEF;
+}
+
+/* c9 tabs */
+.editor_tab .btnsesssioncontainer {
+  position: static;
+  background: inherit;
+  border: none;
+  box-shadow: none;
+  padding-left: 25px;
+}
+.session_btn, .session_btn.curbtn {
+  border-radius: 0;
+  margin: 0 1px 0 0;
+  padding: 0;
+  max-width: 150px;
+  height: 100%;
+}
+.session_btn .tab_shadow {
+  display: none;
+}
+.session_btn .tab_middle,
+.session_btn.curbtn .tab_middle{
+  background-image: none;
+  margin: 0;
+  padding: 0 8px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dark.session_btn.curbtn .tab_middle {
+  margin: 0 !important;
+}
+.tab_middle:before,
+.tab_middle:after {
+  display: none !important;
+}
+.session_btn.btnclose .tab_middle .sessiontab_title {
+  margin: 0;
+  height: auto;
+  text-overflow: ellipsis;
+}
+.session_btn strong,
+.has_apf .session_btn strong:hover,
+.has_apf .session_btn strong:active,
+.has_apf .session_btn.curbtn strong:hover,
+.has_apf .session_btn.curbtn strong:active,
+.has_apf .session_btn.changed strong,
+.has_apf .session_btn.loading strong,
+.has_apf .session_btn.connecting strong,
+.has_apf .session_btn.saving strong,
+.has_apf .session_btn.saved strong,
+.has_apf .session_btn.conflict strong,
+.has_apf .session_btn.error strong {
+  background-image: none;
+  margin-right: 12px;
+  margin: 0;
+  height: 13px;
+  width: 13px;
+  position: relative;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: border-radius 0.4s, background-color 0.4s;
+}
+.has_apf .session_btn.changed strong:not(:hover),
+.has_apf .session_btn.loading strong:not(:hover),
+.has_apf .session_btn.connecting strong:not(:hover),
+.has_apf .session_btn.saving strong:not(:hover),
+.has_apf .session_btn.saved strong:not(:hover),
+.has_apf .session_btn.conflict strong:not(:hover),
+.has_apf .session_btn.error strong:not(:hover) {
+  width: 9px;
+  height: 9px;
+  right: 1px;
+  border-radius: 50%;
+}
+.has_apf .session_btn.changed strong:not(:hover) {
+  border: 1px solid #ABB2BF;
+}
+.has_apf .session_btn.loading strong:not(:hover),
+.has_apf .session_btn.connecting strong:not(:hover){
+  border-radius: 1px;
+  background-color: transparent;
+  border: 1px solid #ABB2BF;
+  animation: loading 0.7s ease-out infinite;
+}
+.has_apf .session_btn.saving strong:not(:hover) {
+  border-radius: 1px;
+  animation: saving 2s infinite;
+}
+.has_apf .session_btn.saved strong:not(:hover) {
+  animation-fill-mode: forwards;
+  animation: saved 1s;
+}
+.has_apf .session_btn.conflict strong:not(:hover) {
+  background-color: #D19A66;
+}
+.has_apf .session_btn.error strong:not(:hover) {
+  background-color: #BE5046;
+}
+.has_apf .session_btn strong:hover,
+.has_apf .session_btn strong:active {
+  background-color: #5C6370;
+}
+.has_apf .session_btn.curbtn strong:hover,
+.has_apf .session_btn.curbtn strong:active {
+  background-color: #ABB2BF;
+}
+.session_btn strong::before,
+.session_btn strong::after {
+  content: '';
+  background-color: #5C6370;
+  position: absolute;
+  margin: 0;
+  width: 1px;
+  height: 9px;
+  top: 2px;
+  left: 6px;
+}
+.session_btn strong::before {
+  transform: rotate(45deg);
+}
+.session_btn strong::after {
+  transform: rotate(-45deg);
+}
+.session_btn strong:hover::before,
+.session_btn strong:hover::after {
+  background-color: #ABB2BF;
+}
+.session_btn.curbtn strong::before,
+.session_btn.curbtn strong::after {
+  background-color: #ABB2BF;
+}
+.session_btn.curbtn strong:hover::before,
+.session_btn.curbtn strong:hover::after {
+  background-color: #5C6370;
+}
+.has_apf .session_btn.changed strong:not(:hover)::before,
+.has_apf .session_btn.changed strong:not(:hover)::after,
+.has_apf .session_btn.loading strong:not(:hover)::before,
+.has_apf .session_btn.loading strong:not(:hover)::after,
+.has_apf .session_btn.connecting strong:not(:hover)::before,
+.has_apf .session_btn.connecting strong:not(:hover)::after,
+.has_apf .session_btn.saving strong:not(:hover)::before,
+.has_apf .session_btn.saving strong:not(:hover)::after,
+.has_apf .session_btn.saved strong:not(:hover)::before,
+.has_apf .session_btn.saved strong:not(:hover)::after,
+.has_apf .session_btn.conflict strong:not(:hover)::before,
+.has_apf .session_btn.conflict strong:not(:hover)::after,
+.has_apf .session_btn.error strong:not(:hover)::before,
+.has_apf .session_btn.error strong:not(:hover)::after {
+  display: none;
+}
+.c9-simple-btn.plus_tab_button {
+  margin: 4px 0 0 7px;
+  transform: none;
+  background-color: #bbb;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  position: relative;
+  padding: 0;
+}
+
+.c9-simple-btn.plus_tab_button:hover {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.c9-simple-btn.plus_tab_button::before,
+.c9-simple-btn.plus_tab_button::after {
+  content: '';
+  background-image: none;
+  background-color: #333;
+  transform: none;
+  position: absolute;
+  margin: 0;
+}
+
+.c9-simple-btn.plus_tab_button::before {
+  width: 2px;
+  height: 8px;
+  left: 5px;
+  top: 2px;
+}
+
+.c9-simple-btn.plus_tab_button::after,
+.has_apf .plus_tab_button.c9-simple-btnOver::after,
+.has_apf .plus_tab_button.c9-simple-btnDown::after {
+  width: 8px;
+  height: 2px;
+  left: 2px;
+  top: 5px;
+  margin: 0;
+}
+
+/* pug classes */
+.ace_class.ace_jade {
+  color: #C678DD;
+}
+
+.bar-preferences {
+  margin: 10px;
+}
+
+
+/* Filetree */
+.filetree.ace_tree_focus .tree-row.selected {
+  background: #61AFEF;
+}
+
+.filetree .filetree-icon {
+  background: none;
+  border: 1px solid #828997;
+  border-radius: 3px;
+  padding: 0;
+  height: 10px;
+  width: 16px;
+  position: relative;
+  color: #f1f1f1;
+}
+
+.filetree .loading .filetree-icon, .filetree .filetree-icon.loading {
+  background-image: none !important;
+}
+
+.filetree .loading .filetree-icon::after, .filetree .filetree-icon.loading::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 2px;
+  background-color: #ABB2BF;
+  border-radius: 50%;
+  height: 4px;
+  width: 4px;
+  animation: folder-loading 0.7s infinite alternate;
+}
+
+.filetree .filetree-icon.folder {
+  border: 1px solid #828997;
+  background-color: #828997;
+  border-radius: 1px;
+  height: 7px;
+  top: 0px;
+  width: 12px;
+  margin: 0 3px;
+  position: relative;
+}
+
+.filetree .filetree-icon.folder::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -1px;
+  border-bottom: 4px solid #828997;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  height: 0;
+  width: 4px;
+}
+
+.filetree-icon:not(.folder):before {
+  position: absolute;
+  top: 3px;
+  text-align: center;
+  width: 16px;
+  font-size: 7px;
+  line-height: 80%;
+}
+
+.filetree-icon.html:before {
+  content: 'html';
+}
+
+.filetree-icon.css:before {
+  content: 'css';
+}
+
+.filetree-icon.page_white_code:before {
+  content: '<>';
+}
+
+.filetree-icon.page_white_text:before {
+  content: 'txt';
+}
+
+.filetree-icon.page_white_gear:before {
+  content: 'conf';
+}
+
+.filetree-icon.page_white_picture:before {
+  content: 'svg';
+}
+
+.filetree-icon.image:before {
+  content: 'img';
+}
+
+/* Commands Menu */
+.searchresults .item.selected {
+  background-color: #61AFEF;
+}
+
+.searchresults .item span strong {
+  color: #61AFEF;
+}
+
+/* Share Page */
+#shareLinkEditor, #shareLinkApp, #shareLinkPreview {
+  color: #5C6370;
+}
+
+/* Workspace Page */
+#resizeContainer span {
+  color: #5C6370;
+}
+
+/* Context Menu */
+.c9menu {
+  background-color: rgba(40,40,40,0.97);
+}
+
+.c9menu > div.menu_item.hover {
+  background-color: #61AFEF;
+}
+
+.code_complete_text.dark .ace_line {
+  color: #828997;
+}
+
+.code_complete_text.dark .ace_line.ace_selected {
+  background-color: #61AFEF;
+}
+
+.code_complete_text.dark .ace_line .main u {
+  color: #61AFEF;
+}
+
+/* Form Elements */
+.btn-default-css3.btn-green {
+  background-image: none;
+  background-color: #61AFEF;
+}
+
+.c9-optionList .c9-dd-item.hover {
+  background-color: #61AFEF;
+}
+
+.c9-optionList .c9-dd-item.selected {
+  color: #61AFEF;
+}
+
+.cbblack.cbcontainer .checkbox {
+  background-image: none;
+  background-color: #5C6370;
+  border-radius: 2px;
+  width: 20px;
+}
+
+.cbblack.cbcontainerChecked .checkbox {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='8 8 36 36' version='1.1' xml:space='preserve'><path d='M14.1 27.2l7.1 7.2 16.7-16.8' fill='none' stroke='#61AFEF' stroke-width='5'/></svg>");
+}
+
+.cbblack.cbcontainerChecked.cbcontainerOver .checkbox {
+  background-position: center;
+}
+
+.cbofflineChecked:after {
+  background-color: #61AFEF;
+}
+
+/* Preferences */
+.bar-preferences .navigation .level1.active > a {
+  background-color: #61AFEF;
+}
+
+.bar-preferences .navigation .current a {
+  color: #61AFEF;
+}
+
+.prefpanel a {
+  color: #61AFEF;
+}
+
+/* Find Bar */
+.searchbox .ace-tm .ace_marker-layer .ace_selection {
+  background-color: #828997;
+}
+
